@@ -19,7 +19,7 @@ public class CustomUser extends AbstractUserAdapter {
     private final String email;
     private final String firstName;
     private final String lastName;
-    private final Date birthDate;
+//    private final Date birthDate;
 
     public CustomUser(KeycloakSession session, RealmModel realm,
                        ComponentModel storageProviderModel,
@@ -33,7 +33,7 @@ public class CustomUser extends AbstractUserAdapter {
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.birthDate = birthDate;
+//        this.birthDate = birthDate;
 
     }
 
@@ -62,9 +62,9 @@ public class CustomUser extends AbstractUserAdapter {
         return new LegacyUserCredentialManager(session, realm, this);
     }
 
-    public Date getBirthDate() {
-        return birthDate;
-    }
+//    public Date getBirthDate() {
+//        return birthDate;
+//    }
 
     @Override
     public Map<String, List<String>> getAttributes() {
@@ -73,7 +73,7 @@ public class CustomUser extends AbstractUserAdapter {
         attributes.add(UserModel.EMAIL,getEmail());
         attributes.add(UserModel.FIRST_NAME,getFirstName());
         attributes.add(UserModel.LAST_NAME,getLastName());
-        attributes.add("birthDate",getBirthDate().toString());
+//        attributes.add("birthDate",getBirthDate().toString());
         return attributes;
     }
 
